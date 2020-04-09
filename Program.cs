@@ -6,7 +6,11 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var singleObj1 = SingletonService.GetInstance();
+            singleObj1.PrintPattern();
+
+            var singleObj2 = SingletonService.GetInstance();
+            singleObj2.PrintPattern();
         }
     }
 }
