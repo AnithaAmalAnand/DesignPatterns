@@ -5,8 +5,8 @@ namespace DesignPatterns.Tests {
         [Fact]
         public void ReturnSameInstance()
         {
-        //Given
 
+        //Given
         var sObj1 = SingletonService.GetInstance();
         var sObj2 = SingletonService.GetInstance();
         
@@ -14,8 +14,9 @@ namespace DesignPatterns.Tests {
         
         //Then
         Assert.Same(sObj1, sObj2);
-        
         }
 
+
     }
+
 }
