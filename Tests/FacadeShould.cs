@@ -2,6 +2,7 @@ using Xunit;
 using Microsoft.Extensions.DependencyInjection;
 using DesignPatterns.Interfaces;
 using FluentAssertions;
+using Microsoft.Extensions.Logging;
 
 namespace DesignPatterns.Tests {
     
@@ -15,6 +16,8 @@ namespace DesignPatterns.Tests {
             serviceCollection.AddScoped<IAccountProcessor, AccountProcessor>();
             serviceCollection.AddScoped<IUserProcessor, UserProcessor>();
             serviceCollection.AddScoped<IFacadeService, FacadeService>();
+            serviceCollection.AddScoped<ILoggerFactory, LoggerFactory>();
+             
             
             _serviceProvider = serviceCollection.BuildServiceProvider();
             var facadeObject = _serviceProvider.GetService<IFacadeService>();

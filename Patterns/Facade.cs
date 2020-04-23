@@ -9,12 +9,12 @@ namespace DesignPatterns {
     
     
     public class FacadeService: IFacadeService {      
+        
         public readonly IAccountProcessor _accountProcessor;
         public readonly IUserProcessor _userProcessor;
-        public FacadeService(IAccountProcessor accountProcessor, IUserProcessor userProcessor) {
+        public FacadeService( IAccountProcessor accountProcessor, IUserProcessor userProcessor) {
             _accountProcessor = accountProcessor;
             _userProcessor = userProcessor;
-
         }
 
         public async Task<bool> Process() {
@@ -25,8 +25,14 @@ namespace DesignPatterns {
     }
 
     public class AccountProcessor: IAccountProcessor {
+        private ILogger _logger;
+        public AccountProcessor(ILoggerFactory loggerFactory) {
+            _logger = loggerFactory.CreateLogger<AccountProcessor>();
+
+        }
         public async Task<List<T>> GetRecords<T>() {
             var acctList = new List<T>();
+            _logger.LogDebug("`Creating a list");
             return acctList;
 
         }
@@ -34,8 +40,14 @@ namespace DesignPatterns {
     }
 
     public class UserProcessor: IUserProcessor {
+
+        private ILogger _logger;
+        public UserProcessor(ILoggerFactory loggerFactory) {
+            _logger = loggerFactory.CreateLogger<UserProcessor>();
+        }
         public async Task<User> GetUser() {        
             var user = new User();
+            _logger.LogDebug("`Creating an user object");
             return user;
         }
     }
