@@ -14,6 +14,20 @@ namespace DesignPatterns
             _provider = BuildDependencies().BuildServiceProvider();
 
             var logger = _provider.GetService<ILoggerFactory>().CreateLogger<Program>();
+
+            logger.LogInformation("Observer");
+
+            var product = new Product("Coffee", "Unavailable");
+            var loggerFactory = _provider.GetService<ILoggerFactory>();
+            var o1 = new Observer(loggerFactory,product);
+            var o2 = new Observer(loggerFactory,product);
+        
+            product.Attach(o1);
+            product.Attach(o2);
+            product.SetState("Available");
+            product.DetachAll();
+
+
             
             logger.LogInformation("FactoryMethod");
 
