@@ -12,7 +12,10 @@ namespace DesignPatterns.Tests {
 
             //Arrange
             var serviceCollection = new ServiceCollection();
+            serviceCollection.AddScoped<IAccountProcessor, AccountProcessor>();
+            serviceCollection.AddScoped<IUserProcessor, UserProcessor>();
             serviceCollection.AddScoped<IFacadeService, FacadeService>();
+            
             _serviceProvider = serviceCollection.BuildServiceProvider();
             var facadeObject = _serviceProvider.GetService<IFacadeService>();
             
