@@ -1,11 +1,9 @@
 using System;
 using Microsoft.Extensions.Logging;
+using DesignPatterns.Interfaces;
 
 namespace DesignPatterns {
-    public interface IReconcile
-    {
-        void DoReconciliation();
-    }
+   
 
     public class ReconcileTrades: IReconcile {
         private ILogger _logger;
@@ -29,10 +27,7 @@ namespace DesignPatterns {
         }
     }
 
-    public interface IReconObjectFactory
-    {
-        IReconcile GetReconObject(string ReconType);
-    }
+  
 
      public class ReconObjectFactory: IReconObjectFactory
     {

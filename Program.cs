@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DesignPatterns.Interfaces;
 
 namespace DesignPatterns
 {
@@ -32,6 +33,10 @@ namespace DesignPatterns
             var singleObj2 = SingletonService.GetInstance();
             singleObj2.PrintPattern();
 
+            for (int i=0; i< 2000; i++) {
+                Console.Write(i + ",");
+            }
+
             Console.ReadLine();
         }
 
@@ -42,6 +47,8 @@ namespace DesignPatterns
             serviceCollection.AddLogging(opt => opt.AddConsole().SetMinimumLevel(LogLevel.Debug));
             serviceCollection.AddScoped<IReconObjectFactory, ReconObjectFactory>();
             serviceCollection.AddScoped<ILoggerFactory, LoggerFactory>();
+            serviceCollection.AddScoped<IAccountProcessor, AccountProcessor>();
+            serviceCollection.AddScoped<IUserProcessor, UserProcessor>();
             return serviceCollection;
         }
     }
