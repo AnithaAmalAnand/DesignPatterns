@@ -19,7 +19,7 @@ namespace DesignPatterns {
         
         public void UpdateStatus(string state) {
             _state = state;
-            _logger.LogDebug("State updated");
+            _logger.LogDebug("Stock status: " + state);
         }
 
     }
