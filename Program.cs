@@ -14,10 +14,12 @@ namespace DesignPatterns
             _provider = BuildDependencies().BuildServiceProvider();
 
             var logger = _provider.GetService<ILoggerFactory>().CreateLogger<Program>();
+            
+            #region ObserverPattern
 
             logger.LogInformation("Observer");
 
-            var product = new Product("Coffee", "Unavailable");
+            var product = new Product { Name = "Coffee", State = "Unavailable" };
             var loggerFactory = _provider.GetService<ILoggerFactory>();
             var o1 = new Observer(loggerFactory,product);
             var o2 = new Observer(loggerFactory,product);
@@ -26,8 +28,14 @@ namespace DesignPatterns
             product.Attach(o2);
             product.SetState("Available");
             product.DetachAll();
+            
+            #endregion
 
 
+            var testEmpty = String.IsNullOrEmpty("This is a test string");
+            logger.LogInformation(testEmpty.ToString());
+            
+            #region FactoryMethodPattern
             
             logger.LogInformation("FactoryMethod");
 
@@ -37,7 +45,10 @@ namespace DesignPatterns
 
             IReconcile recFixing = reconObj.GetReconObject("Fixings");
             recFixing.DoReconciliation();
-
+            
+            #endregion
+            
+            #region SingletonPattern
 
             logger.LogInformation("Singleton");
             
@@ -46,12 +57,10 @@ namespace DesignPatterns
 
             var singleObj2 = SingletonService.GetInstance();
             singleObj2.PrintPattern();
+            
+            #endregion
 
-            for (int i=0; i< 2000; i++) {
-                Console.Write(i + ",");
-            }
-
-            Console.ReadLine();
+           Console.ReadLine();
         }
 
 
@@ -66,4 +75,5 @@ namespace DesignPatterns
             return serviceCollection;
         }
     }
+    
 }

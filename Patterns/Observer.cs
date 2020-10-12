@@ -28,11 +28,17 @@ namespace DesignPatterns {
     public class Product: ISubject {
 
         private string _name;
+
+        public string Name
+        {
+            set { _name = value; }
+        }
+        
         private string _state;
 
-        public Product(string name, string state) {
-            _name = name;
-            _state = state;
+        public string State
+        {
+            set { _state = value; }
         }
 
         private List<IStockObserver> lstObservers = new List<IStockObserver>(); 

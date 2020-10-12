@@ -10,8 +10,8 @@ namespace DesignPatterns {
     
     public class FacadeService: IFacadeService {      
         
-        public readonly IAccountProcessor _accountProcessor;
-        public readonly IUserProcessor _userProcessor;
+        private readonly IAccountProcessor _accountProcessor;
+        private readonly IUserProcessor _userProcessor;
         public FacadeService( IAccountProcessor accountProcessor, IUserProcessor userProcessor) {
             _accountProcessor = accountProcessor;
             _userProcessor = userProcessor;
@@ -25,7 +25,7 @@ namespace DesignPatterns {
     }
 
     public class AccountProcessor: IAccountProcessor {
-        private ILogger _logger;
+        private readonly ILogger _logger;
         public AccountProcessor(ILoggerFactory loggerFactory) {
             _logger = loggerFactory.CreateLogger<AccountProcessor>();
 
@@ -41,7 +41,7 @@ namespace DesignPatterns {
 
     public class UserProcessor: IUserProcessor {
 
-        private ILogger _logger;
+        private readonly ILogger _logger;
         public UserProcessor(ILoggerFactory loggerFactory) {
             _logger = loggerFactory.CreateLogger<UserProcessor>();
         }

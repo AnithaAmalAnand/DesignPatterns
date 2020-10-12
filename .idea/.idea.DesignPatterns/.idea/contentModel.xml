@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.1/build/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.1/build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.1/build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_DesignPatterns.1393858028.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="DesignPatterns.csproj" t="IncludeRecursive" />
+      <e p="DesignPatterns.sln" t="IncludeFlat" />
+      <e p="Interfaces" t="Include">
+        <e p="IAccountProcessor.cs" t="Include" />
+        <e p="IAdapter.cs" t="Include" />
+        <e p="IFacadeService.cs" t="Include" />
+        <e p="IObserver.cs" t="Include" />
+        <e p="IReconcile.cs" t="Include" />
+        <e p="IReconObjectFacctory.cs" t="Include" />
+        <e p="ISubject.cs" t="Include" />
+        <e p="IUserProcessor.cs" t="Include" />
+      </e>
+      <e p="LICENSE" t="Include" />
+      <e p="Models" t="Include">
+        <e p="User.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="DesignPatterns.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Patterns" t="Include">
+        <e p="Facade.cs" t="Include" />
+        <e p="FactoryMethod.cs" t="Include" />
+        <e p="Observer.cs" t="Include" />
+        <e p="Singleton.cs" t="Include" />
+      </e>
+      <e p="Program.cs" t="Include" />
+      <e p="README.md" t="Include" />
+      <e p="Tests" t="Include">
+        <e p="FacadeShould.cs" t="Include" />
+        <e p="FactoryMethodShould.cs" t="Include" />
+        <e p="ObserverShould.cs" t="Include" />
+        <e p="SingletonShould.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

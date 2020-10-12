@@ -6,7 +6,7 @@ namespace DesignPatterns {
    
 
     public class ReconcileTrades: IReconcile {
-        private ILogger _logger;
+        private readonly ILogger _logger;
         public ReconcileTrades(ILoggerFactory loggerFactory) {
             _logger = loggerFactory.CreateLogger<ReconcileTrades>();
         }
@@ -17,7 +17,7 @@ namespace DesignPatterns {
     }
 
     public class ReconcileFixings: IReconcile {
-        private ILogger _logger;
+        private readonly ILogger _logger;
 
           public ReconcileFixings(ILoggerFactory loggerFactory) {
             _logger = loggerFactory.CreateLogger<ReconcileFixings>();
@@ -31,7 +31,7 @@ namespace DesignPatterns {
 
      public class ReconObjectFactory: IReconObjectFactory
     {
-        private ILoggerFactory _loggerFactory;
+        private readonly ILoggerFactory _loggerFactory;
         public ReconObjectFactory(ILoggerFactory loggerFactory) {
             _loggerFactory = loggerFactory;
         }
